@@ -131,3 +131,60 @@ const result4 = calc(myArray, (input) => input * 2);
 const multiply3 = (input) => input * 3;
 
 // Closure
+
+/*
+   When out functions get called, we create a live store fo data (local memory/variable environment/state)
+   for that function's execution context. 
+
+   When the function finished execution, its local memory is deleted (except the return value). 
+
+   But what is out function could hold on to live data between executions ? 
+
+   This would let our function definitions have an associated cache/persistent memory. 
+
+   But it all starts with us returning a function from another function.
+
+   *** Memoization
+*/
+
+function createFunction() {
+  function multiply2(num) {
+    return num * 2;
+  }
+
+  return multiply2;
+}
+
+const generatedFunc = createFunction();
+const result = generatedFunc(3);
+
+function outer() {
+  let counter = 0;
+
+  function incrementCounter() {
+    counter++;
+    // console.log(counter);
+  }
+
+  return incrementCounter;
+}
+
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+
+/*
+  when we return a function it takes with it self a small backpack with surrounding local data
+
+  so in ⬆️ example we retain counter changes and it would increment from 0 to 1 to 2
+
+  [[scope]] -> hidden property
+
+  local memory - variable environment -> surround environment that surrounds an element
+  backpack === closed over variable environment
+  P.l.S.R.D
+   - Persistent lexically or static scope reference data -> backpack --> closure 
+
+
+   JS  scope rule = lexical or static scoping -> where i save my function determines what data will it has access to
+  */
