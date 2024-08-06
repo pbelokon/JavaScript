@@ -187,4 +187,58 @@ myNewFunction();
 
 
    JS  scope rule = lexical or static scoping -> where i save my function determines what data will it has access to
+
+
+
+
+
+
+
+
+
+
+
+   **********************************************************************************************************************
+
+
+    Closure gives functions persistent memories and entirely new toolkit for writing professional code 
   */
+
+
+
+// //// Asynchronous JavaScript 
+
+
+// lest remind our self on how JavaScript executes code 
+// javascript goes lines by line and does it's thread of execution 
+const ll  = 3; 
+function mm2(inputN) { 
+  const  rr = inputN * 2; 
+  return rr; 
+}
+
+const oo = mm2(ll); 
+const  no = mm2(10); 
+
+/*
+web browser not js features
+
+  - Derloob
+  console- console
+  - sockets
+  xhr/fetch - network request
+  document - html dom
+  setTimeout - timer
+  -
+  -
+  -
+
+
+*/
+
+function printHello() { console.log("Hello")}; 
+function blockFor1Sec() { // blocks in the JavaScript thread for 1 sec
+
+}
+setTimeout (printHello, 1000); 
+console.log("Me first!")
