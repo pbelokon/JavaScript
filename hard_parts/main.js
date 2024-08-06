@@ -238,7 +238,17 @@ web browser not js features
 
 function printHello() { console.log("Hello")}; 
 function blockFor1Sec() { // blocks in the JavaScript thread for 1 sec
-
+  
 }
 setTimeout (printHello, 1000); 
 console.log("Me first!")
+
+// ES6 PROMISES 
+function display(data)  { 
+  console.log(data);
+}
+
+const futureData = fetch('https://twitter.com/will/tweets/1'); 
+futureData.then(display); 
+
+console.log("Me First")
