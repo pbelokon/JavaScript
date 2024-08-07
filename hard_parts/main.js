@@ -252,3 +252,9 @@ const futureData = fetch('https://twitter.com/will/tweets/1');
 futureData.then(display); 
 
 console.log("Me First")
+
+/*
+all fetch and promise based functions are in a micro task queue -> which has priority over browser call back queue 
+rather then web browser call back queue 
+
+*/
