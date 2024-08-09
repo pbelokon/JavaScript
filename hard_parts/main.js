@@ -258,3 +258,21 @@ all fetch and promise based functions are in a micro task queue -> which has pri
 rather then web browser call back queue 
 
 */
+
+
+/*
+  Classes and prototypes 
+
+
+*/
+
+// Declare an empty object and add properties with dot notaion 
+
+const user2  = {}; // create an empty object
+
+// assign properties to that object
+user2.name = "Pavel"; 
+user2.score = 8; 
+user2.increment = function() { 
+  user2.score++;
+}; 
